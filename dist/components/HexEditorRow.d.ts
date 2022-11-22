@@ -1,0 +1,34 @@
+import React from 'react';
+import { SelectionDirectionType, SetSelectionBoundaryCallback, HexEditorClassNames, HexEditorInlineStyles, ValueFormatter } from '../types';
+export interface HexEditorRowProps {
+    asciiPlaceholder?: string | JSX.Element | null;
+    className?: string;
+    classNames?: HexEditorClassNames;
+    columns?: number;
+    cursorColumn?: number;
+    cursorOffset?: number;
+    cursorRow?: number;
+    data?: Uint8Array | number[];
+    disabled?: boolean;
+    formatOffset?: (offset: number) => string | number;
+    formatValue?: ValueFormatter;
+    isEditing?: boolean;
+    isHeader?: boolean;
+    labelOffset?: number | null;
+    nonce?: number | string;
+    nybbleHigh?: number | null;
+    offset?: number;
+    rowIndex?: number;
+    selectionDirection?: SelectionDirectionType;
+    selectionEnd?: number;
+    selectionStart?: number;
+    setSelectionEnd?: SetSelectionBoundaryCallback;
+    setSelectionRange?: (start: number | null, end?: number | null, direction?: SelectionDirectionType | null, takeFocus?: boolean) => void;
+    setSelectionStart?: SetSelectionBoundaryCallback;
+    showAscii?: boolean;
+    showLabel?: boolean;
+    style?: React.CSSProperties;
+    styles?: HexEditorInlineStyles;
+}
+declare const _default: React.MemoExoticComponent<React.ForwardRefExoticComponent<HexEditorRowProps & React.RefAttributes<HTMLDivElement>>>;
+export default _default;
