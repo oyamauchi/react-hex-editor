@@ -645,10 +645,14 @@ const HexEditor: React.RefForwardingComponent<HexEditorHandle, HexEditorProps> =
       cursorOffset,
       data,
       editMode: currentEditMode,
+      readOnly,
     } = stateRef.current;
     const dataLength = data.length;
     const maxOffset = dataLength - cursorOffset;
     e.preventDefault();
+    if (readOnly) {
+      return;
+    }
     const clipboardText = e.clipboardData.getData('Text');
     const values = currentEditMode === EDIT_MODE_ASCII
       ? clipboardText.split('').map(v => v.charCodeAt(0))
